@@ -1,6 +1,17 @@
 package com.koenig.firstjobapp.job;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+//@Table(name="job_table")
 public class Job {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
@@ -17,7 +28,12 @@ public class Job {
         this.location = location;
     }
 
-    public Long getId() {
+    public Job() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Long getId() {
         return id;
     }
 
